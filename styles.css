@@ -1,7 +1,4 @@
-#center_top {
-    color: blue;
+html {
+    text-align: center;
 }
 
-#center_bottom {
-    color: red
-}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grid.css">
+    <title>CSS Grids</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <h1>CSS Grids</h1>
+
+        <p>The purpose of today's study is to explore CSS Grid Layouts.</p>
+        <p><strong>References: </strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">MDN
+                Web Docs</a></p>
+    </header>
+
+
+    <article>
+        <p>The first step to working with CSS grid layouts is creating a wrapper class.</p>
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+.wrapper {
+    border-style: solid;
+    border-width: 1px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto)
+}
+                </code>
+            </div>
+        </div>
+        <p>The perimeter of the wrapper class is shown with a black border.</p>
+        <div class="wrapper">
+            <div class="placeholder"></div>
+        </div>
+
+
+        <p>
+            Dividing the wrapper class into three rows and three colums
+            yields nine work areas. </p>
+        <p>I labeled my classes according to the
+            following schema:</p>
+        <p>
+            <code>
+    w{width}h{height}atr{row}c{column}
+            </code>
+        </p>
+        <p>where row and column represent the upper left corner of the space.</p>
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+/* Column 1 */
+.w1h1atr1c1 {
+    background-color: cadetblue;
+    grid-column: 1;
+    grid-row: 1;
+}
+.w1h1atr2c1 {
+    background-color: cadetblue;
+    grid-column: 1;
+    grid-row: 2;
+}
+.w1h1atr3c1 {
+    background-color: cadetblue;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* Column 2 */
+.w1h1atr1c2 {
+    background-color: cadetblue;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+...etc.             
+                </code>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="w1h1atr1c1">
+                <p>Height: 1</p>
+                <p>Width: 1</p>
+            </div>
+            <div class="w1h1atr2c1"></div>
+            <div class="w1h1atr3c1"></div>
+            <div class="w1h1atr1c2"></div>
+            <div class="w1h1atr2c2"></div>
+            <div class="w1h1atr3c2"></div>
+            <div class="w1h1atr1c3"></div>
+            <div class="w1h1atr2c3"></div>
+            <div class="w1h1atr3c3"></div>
+        </div>
+
+
+        <p>There are six possible areas where the width to height ratio
+            is 2:1.
+        </p>
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+/* Column 1 */
+.w2h1atr1c1 {
+    background-color: greenyellow;
+    grid-column: 1/3;
+    grid-row: 1;
+}
+.w2h1atr2c1 {
+    background-color: greenyellow;
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+...
+
+/* Column 2 */
+.w2h1atr1c2 {
+    background-color: greenyellow;
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+...
+                </code>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="w2h1atr1c1">
+                <p>Height: 1</p>
+                <p>Width: 2</p>
+            </div>
+            <div class="w2h1atr2c2"></div>
+            <div class="w2h1atr3c1"></div>
+        </div>
+
+        <p>There are also six possible positions for width to height ratio
+            is 1:2.
+        </p>
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+/* Row 1 2*/
+.w1h2atr1c1 {
+    background-color: palevioletred;
+    grid-column: 1;
+    grid-row: 1/3;
+}
+.w1h2atr1c2 {
+    background-color: palevioletred;
+    grid-column: 2;
+    grid-row: 1/3;
+}
+
+...
+
+/* Row 2 */
+.w1h2atr2c1 {
+    background-color: palevioletred;
+    grid-column: 1;
+    grid-row: 2/4;
+}
+
+...
+                    
+                </code>
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <div class="w1h2atr1c1">
+                <p>Height: 2</p>
+                <p>Width: 1</p>
+            </div>
+            <div class="w1h2atr2c2"></div>
+            <div class="w1h2atr1c3"></div>
+        </div>
+        <div class="comment">
+            <p><em>
+                    Since the wrapper class is using <code>auto</code> to generate rows,
+                    if nothing is created in a row, the row won't be created at all.
+                    For example, the following code is supposed to create a width to
+                    height ratio of 2:1 instead of 3:1, but the third row does not get
+                    created.
+                </em></p>
+
+            <div class="row">
+                <div class="row-left">
+                    <div class="code-snip-background">
+                        <div class="code-snip">
+                            <code>
+&ltdiv class="wrapper"&gt
+    &ltdiv class="w1h2atr1c1"&gt&lt/div&gt
+&lt/div&gt
+                </code>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-right">
+                    <div class="wrapper">
+                        <div class="w1h2atr1c1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>Other examples of dividing a nine by nine grid.</p>
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+.w2h2atr1c1 {
+    background-color: yellow;
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+...
+
+.w2h2atr2c2 {
+    background-color: yellow;
+    grid-column: 2/4;
+    grid-row: 2/4;
+}
+
+...
+
+                </code>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="w2h2atr1c1">
+                <p>Height: 2</p>
+                <p>Width: 2</p>
+            </div>
+            <div class="w2h2atr2c2" style="background-color:rgba(255, 255, 0, 0.514);"></div>
+        </div>
+
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+.w3h1atr1c1 {
+    background-color: orchid;
+    grid-column: 1/4;
+    grid-row: 1;
+}
+                </code>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="w3h1atr1c1">
+                <p>Height: 1</p>
+                <p>Width: 3</p>
+            </div>
+            <div class="w3h1atr2c1"></div>
+            <div class="w3h1atr3c1"></div>
+        </div>
+
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+.w1h3atr1c1 {
+    background-color: palegreen;
+    grid-column: 1;
+    grid-row: 1/4;
+}
+                </code>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="w1h3atr1c1">
+                <p>Height: 3</p>
+                <p>Width: 1</p>
+            </div>
+            <div class="w1h3atr1c2"></div>
+            <div class="w1h3atr1c3"></div>
+        </div>
+
+        <div class="code-snip-background">
+            <div class="code-snip">
+                <code>
+.w2h3atr1c2 {
+    background-color: goldenrod;
+    grid-column: 2/4;
+    grid-row: 1/4;
+}
+
+...
+
+.w3h2atr1c1 {
+    background-color: coral;
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+...
+
+                </code>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="w2h3atr1c2">
+                <p>Height: 3</p>
+                <p>Width: 2</p>
+            </div>
+            <div class="w3h2atr1c1">
+                <p>Height: 2</p>
+                <p>Width: 3</p>
+            </div>
+        </div>
+    </article>
+</body>
+<footer>
+    <a href="index.html">Return to Home</a>
+</footer>
+
+</html>
