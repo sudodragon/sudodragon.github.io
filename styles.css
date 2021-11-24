@@ -1,24 +1,35 @@
+:root {
+    --main-light: #f4f6f1;
+    --main-dark: #2d3030;
+    --accent-blue: #5c7571;
+    --accent-tan: #a0a194;
+    --accent-dark: #454545;
+    --title-font: 'Overpass', sans-serif;
+    --sub-title-font: 'Heebo', sans-serif;
+    --text-font: 'Assistant', sans-serif;
+}
+
 html {
-    background-color: #2d3030;
-    color: #f4f6f1;
-    font-family: 'Overpass', sans-serif;
+    background-color: var(--main-dark);
+    color: var(--main-light);
+    font-family: var(--title-font);
     text-align: center;
 }
 
 a {
-    color: #5c7571;
-    font-family: 'Heebo', sans-serif;
+    color: var(--accent-blue);
+    font-family: var(--sub-title-font);
     text-decoration: none;
 }
 
 footer {
-    color: #a0a194;
-    font-family: 'Assistant', sans-serif;
+    color: var(--accent-dark);
+    font-family: var(--text-font);
     text-align: center;
 }
 
 .centerContainer {
-    display: grid;
+    display: flex;
 }
 
 .centerElement {
@@ -26,13 +37,13 @@ footer {
 }
 
 #centerArea {    
-    background-color: #454545;
+    background-color: var(--accent-dark);
     height: 200px;
     width: 400px;
 }
 
 #centerLine {
-    background-color: #f4f6f1;
+    background-color: var(--main-light);
     height: 1px;
     margin: auto;
     max-width: 70%;
