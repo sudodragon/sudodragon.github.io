@@ -1,4 +1,39 @@
 html {
+    background-color: #2d3030;
+    color: #f4f6f1;
+    font-family: 'Overpass', sans-serif;
     text-align: center;
 }
 
+a {
+    color: #5c7571;
+    font-family: 'Heebo', sans-serif;
+    text-decoration: none;
+}
+
+footer {
+    color: #a0a194;
+    font-family: 'Assistant', sans-serif;
+    text-align: center;
+}
+
+.centerContainer {
+    display: grid;
+}
+
+.centerElement {
+    margin: auto;
+}
+
+#centerArea {    
+    background-color: #454545;
+    height: 200px;
+    width: 400px;
+}
+
+#centerLine {
+    background-color: #f4f6f1;
+    height: 1px;
+    margin: auto;
+    max-width: 70%;
+}
