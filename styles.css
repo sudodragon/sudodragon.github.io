@@ -1,50 +1,32 @@
-:root {
-    --main-light: #f4f6f1;
-    --main-dark: #2d3030;
-    --accent-blue: #5c7571;
-    --accent-tan: #a0a194;
-    --accent-dark: #454545;
-    --title-font: 'Overpass', sans-serif;
-    --sub-title-font: 'Heebo', sans-serif;
-    --text-font: 'Assistant', sans-serif;
-}
-
-html {
-    background-color: var(--main-dark);
-    color: var(--main-light);
-    font-family: var(--title-font);
-    text-align: center;
-}
-
-a {
-    color: var(--accent-blue);
-    font-family: var(--sub-title-font);
-    text-decoration: none;
-}
-
 footer {
-    color: var(--accent-dark);
-    font-family: var(--text-font);
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
     text-align: center;
+    width: 100%;
 }
 
 .centerContainer {
-    display: flex;
-}
-
-.centerElement {
-    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(3, 30vh);
 }
 
 #centerArea {    
-    background-color: var(--accent-dark);
-    height: 200px;
-    width: 400px;
+    grid-row: 2;
+    min-height: 200px;
+    min-width: 400px;
+    text-align: center;
 }
 
 #centerLine {
-    background-color: var(--main-light);
     height: 1px;
     margin: auto;
-    max-width: 70%;
+    max-width: 350px;
+}
+
+#lowerCenter {
+    grid-row: 3;
+    text-align: center;
 }

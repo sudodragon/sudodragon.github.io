@@ -1,0 +1,37 @@
+:root {
+    --main-light: #f4f6f1;
+    --main-dark: #2d3030;
+    --accent-blue: #5c7571;
+    --accent-tan: #a0a194;
+    --accent-dark: #454545;
+    --title-font: 'Overpass', sans-serif;
+    --sub-title-font: 'Heebo', sans-serif;
+    --text-font: 'Assistant', sans-serif;
+}
+
+html {
+    background-color: var(--main-dark);
+    color: var(--main-light);
+    font-family: var(--title-font);
+}
+
+a {
+    color: var(--accent-blue);
+    font-family: var(--sub-title-font);
+    text-decoration: none;
+}
+
+
+footer {
+    background-color: var(--accent-blue);
+    color: var(--main-dark);
+    font-family: var(--text-font);
+}
+
+#centerArea {    
+    background-color: var(--accent-dark);
+}
+
+#centerLine {
+    background-color: var(--main-light);
+}
