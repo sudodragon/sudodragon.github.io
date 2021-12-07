@@ -23,9 +23,13 @@ a {
 
 
 footer {
-    background-color: var(--accent-blue);
-    color: var(--main-dark);
+    color: var(--accent-tan);
     font-family: var(--text-font);
+    font-size: 10pt;
+}
+
+footer a {
+    color: var(--accent-blue);
 }
 
 #centerArea {    
