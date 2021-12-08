@@ -6,7 +6,6 @@ footer {
     position: fixed;
     text-align: center;
     width: 100%;
-    white-space: nowrap;
 }
 
 footer p {
@@ -20,7 +19,7 @@ footer address {
 
 .centerContainer {
     display: grid;
-    grid-template-rows: repeat(3, 30vh);
+    grid-template-rows: 15vh 60vh 15vh;
 }
 
 #centerArea {    

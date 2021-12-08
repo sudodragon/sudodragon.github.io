@@ -1,0 +1,8 @@
+#little-box {
+    background-color: blue;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    left: 0px;
+}
